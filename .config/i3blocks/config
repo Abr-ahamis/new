@@ -2,9 +2,10 @@
 
 separator_block_width=15
 markup=pango
-[time]
-command=~/.config/i3blocks/scripts/time.sh
-interval=persist
+
+#[time]
+#command=~/.config/i3blocks/scripts/time.sh
+#interval=persist
 
 [network]
 command=~/.config/i3blocks/scripts/network.sh
@@ -27,6 +28,7 @@ min_width=CPU: 100%
 [date]
 command=~/.config/i3blocks/scripts/date.sh
 interval=persist
+
 
 [battery]
 command=~/.config/i3blocks/scripts/battery.sh

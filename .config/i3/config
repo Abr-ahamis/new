@@ -7,6 +7,38 @@ font pango:Font Awesome 7 Free, Font Awesome 7 Brands, DejaVu Sans Mono 7
 
 # Start XDG autostart .desktop files using dex. See also
 
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# ------------------------------------------------------------
+# i3 Gaps Configuration
+# ------------------------------------------------------------
+
+# Inner gaps for all windows (space between windows)
+gaps inner 2px
+
+# Outer gaps for all windows (space between screen edges)
+gaps outer 2px
+# You can also use specific directions:
+# gaps horizontal 10px
+# gaps vertical 10px
+gaps top 1px
+gaps left 1px
+gaps bottom 1px
+gaps right 1px
+
+# Workspace-specific gaps
+# Example for workspace 1:
+#workspace 1 gaps inner 15px
+#workspace 1 gaps outer 20px
+
+# Enable Smart Gaps:
+#   - 'on' removes gaps when only one window is present
+#   - 'inverse_outer' keeps outer gaps only when one window is present
+smart_gaps on
+
+
+
 exec --no-startup-id dex --autostart --environment i3
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -34,6 +66,12 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+# apps
+bindsym Shift+e exec nautilus
+bindsym Shift+f exec firefox
+bindsym Shift+b exec brave-browser
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -132,7 +170,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # assiging app to workspace only open in one workspace only  
-assign [class="org.gnome.Nautilus"] $ws10
+# assign [class="org.gnome.Nautilus"] $ws10
 focus_on_window_activation smart
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,9 +222,7 @@ bar {
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
 
-        font pango:font pango:JetBrainsMono Nerd Font 8, Material Icons 8
-
-#Font Awesome 7 Free, Font Awesome 7 Brands,DejaVu Sans Mono Bold 7
+        font pango:font pango:JetBrainsMono Nerd Font 8, Material Icons 6
 
 }
 
